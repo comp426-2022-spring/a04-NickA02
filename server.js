@@ -92,7 +92,7 @@ app.get('/app/error', (req, res) => {
 
 
 }
-if (log != false) {
+if (argv.log != 'false') {
   const WRITESTREAM = fs.createWriteStream('access.log', { flags: 'a' })
   app.use(morgan('combined', { stream: WRITESTREAM }))
 }
